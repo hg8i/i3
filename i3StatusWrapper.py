@@ -114,9 +114,12 @@ if __name__ == '__main__':
         memory="M:{0}G".format(makeMem())
         j.insert(0, {'full_text' : '%s' % memory, 'name' : 'bright'})
 
-        # temperature
-        temp=getTemp()
-        j.insert(0, {'full_text':"T:"+temp})
+        try:
+            # temperature
+            temp=getTemp()
+            j.insert(0, {'full_text':"T:"+temp})
+        except:
+            j.insert(0, {'full_text':"ConfigTemp"})
 
         clipboard=getClip()
         j.insert(0, {'full_text':clipboard})
