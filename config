@@ -1,0 +1,378 @@
+
+# 
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 10
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+font pango:Terminus 14px
+
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# test to avoid sticky alt key
+# bindsym Alt_L nop
+
+# use Mouse+Mod4 to drag floating windows to their wanted position
+#floating_modifier Mod4
+floating_modifier Mod4
+
+# start a terminal
+#bindsym Mod4+Return exec xterm -fa 'Monospace' -fs 8
+#bindsym Mod4+Return exec xterm -fa 'terminus' -fs 10
+# bindsym Mod4+Return exec termite
+# bindsym Mod4+Return exec st
+bindsym Mod4+Return exec urxvt
+# bindsym Mod4+Shift+Return exec urxvt -xrm "*background: #e0f0e0" 
+
+#bindsym Mod4+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym Mod4+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym Mod4+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+$left move left
+bindsym Mod4+Shift+$down move down
+bindsym Mod4+Shift+$up move up
+bindsym Mod4+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+# move workspace to other window
+bindsym Mod4+equal move workspace to output left
+
+# split in horizontal orientation
+bindsym Mod4+c split h
+
+# split in vertical orientation
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod1+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+Shift+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+
+# focus the child container
+#bindsym Mod4+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym Mod4+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym Mod4+minus scratchpad show
+
+## switch to workspace
+#bindsym Mod4+1 workspace 1:WEB
+#bindsym Mod4+2 workspace 2:UMT
+#bindsym Mod4+3 workspace 3:SLD
+#bindsym Mod4+4 workspace 4:PDF
+#bindsym Mod4+5 workspace 5:STK
+#bindsym Mod4+6 workspace 6:MSG
+#bindsym Mod4+7 workspace 7:SCP
+#bindsym Mod4+8 workspace 8:NOT
+#bindsym Mod4+9 workspace 9:LNX
+#bindsym Mod4+0 workspace 10:LNX
+
+# bindings for scripts/workspace2 script 
+bindsym Mod4+Shift+1 exec "/home/prime/scripts/workspace2.py sendwindowto 1"
+bindsym Mod4+Shift+2 exec "/home/prime/scripts/workspace2.py sendwindowto 2"
+bindsym Mod4+Shift+3 exec "/home/prime/scripts/workspace2.py sendwindowto 3"
+bindsym Mod4+Shift+4 exec "/home/prime/scripts/workspace2.py sendwindowto 4"
+bindsym Mod4+Shift+5 exec "/home/prime/scripts/workspace2.py sendwindowto 5"
+bindsym Mod4+Shift+6 exec "/home/prime/scripts/workspace2.py sendwindowto 6"
+bindsym Mod4+Shift+7 exec "/home/prime/scripts/workspace2.py sendwindowto 7"
+bindsym Mod4+Shift+8 exec "/home/prime/scripts/workspace2.py sendwindowto 8"
+bindsym Mod4+Shift+9 exec "/home/prime/scripts/workspace2.py sendwindowto 9"
+bindsym Mod4+Shift+0 exec "/home/prime/scripts/workspace2.py sendwindowto 0"
+bindsym Mod4+1 exec "/home/prime/scripts/workspace2.py moveto 1"
+bindsym Mod4+2 exec "/home/prime/scripts/workspace2.py moveto 2"
+bindsym Mod4+3 exec "/home/prime/scripts/workspace2.py moveto 3"
+bindsym Mod4+4 exec "/home/prime/scripts/workspace2.py moveto 4"
+bindsym Mod4+5 exec "/home/prime/scripts/workspace2.py moveto 5"
+bindsym Mod4+6 exec "/home/prime/scripts/workspace2.py moveto 6"
+bindsym Mod4+7 exec "/home/prime/scripts/workspace2.py moveto 7"
+bindsym Mod4+8 exec "/home/prime/scripts/workspace2.py moveto 8"
+bindsym Mod4+9 exec "/home/prime/scripts/workspace2.py moveto 9"
+bindsym Mod4+0 exec "/home/prime/scripts/workspace2.py moveto 0"
+#bindsym Mod4+Tab+Shift exec "/home/prime/scripts/workspace2.py incrementscope"
+
+## move focused container to workspace
+#bindsym Mod4+Shift+1 move container to workspace 1:WEB
+#bindsym Mod4+Shift+2 move container to workspace 2:UMT
+#bindsym Mod4+Shift+3 move container to workspace 3:SLD
+#bindsym Mod4+Shift+4 move container to workspace 4:PDF
+#bindsym Mod4+Shift+5 move container to workspace 5:STK
+#bindsym Mod4+Shift+6 move container to workspace 6:MSG
+#bindsym Mod4+Shift+7 move container to workspace 7:SCP
+#bindsym Mod4+Shift+8 move container to workspace 8:LNX
+#bindsym Mod4+Shift+9 move container to workspace 9:LNX
+#bindsym Mod4+Shift+0 move container to workspace 10:LNX
+
+# move to next scope
+bindsym mod1+mod4+$up exec "/home/prime/scripts/workspace2.py incrementscope"
+bindsym mod1+mod4+$down exec "/home/prime/scripts/workspace2.py decrementscope"
+
+#jump to numbered workspace
+bindsym Control+1 workspace :1
+bindsym Control+2 workspace :2
+bindsym Control+3 workspace :3
+bindsym Control+4 workspace :4
+bindsym Control+5 workspace :5
+bindsym Control+6 workspace :6
+bindsym Control+7 workspace :7
+bindsym Control+8 workspace :8
+bindsym Control+9 workspace :9
+bindsym Control+0 workspace :10
+
+
+bindsym mod1+Shift+$right exec "/home/prime/scripts/repeat 1 i3-msg move container to workspace prev"
+bindsym mod1+Shift+$left  exec "/home/prime/scripts/repeat 1 i3-msg move container to workspace next"
+
+# reload the configuration file
+bindsym Mod4+Shift+t reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	colors {
+		# Whole color settings
+		background #000000
+		statusline #ffffff
+		separator  #666666
+
+		# Type             border  background font
+		# focused_workspace  #008fff #007fff #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #aa0000 #990000 #ffffff
+	}
+        # status_command i3status --config /home/prime/dotFiles/.i3status.conf
+        # status_command i3status --config ~/.i3/.i3status.conf
+	status_command i3status --config ~/.i3/.i3status.conf | ~/.i3/i3StatusWrapper.py
+        separator_symbol "|"
+	strip_workspace_numbers yes
+}
+
+#######################################################################
+# automatically start i3-config-wizard to offer the user to create a
+# keysym-based config which used their favorite modifier (alt or windows)
+#
+# i3-config-wizard will not launch if there already is a config file
+# in ~/.i3/config.
+#
+# Please remove the following exec line:
+#######################################################################
+exec i3-config-wizard
+
+## added my Aaron
+# exit
+#bindsym mod1+Shift+e exit
+#bindsym $mod+Shift+e exec i3-msg exit
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym Mod4+XF86AudioRaiseVolume exec beep #test sound level
+
+# bindsym XF86AudioRaiseVolume exec --no-startup-id "/home/prime/scripts/volume.py up"
+# bindsym XF86AudioLowerVolume exec --no-startup-id "/home/prime/scripts/volume.py down"
+# bindsym XF86AudioMute exec --no-startup-id "/home/prime/scripts/volume.py mute"
+# bindsym Mod4+XF86AudioRaiseVolume exec beep #test sound level
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+#todo: move to .xinitrc
+#exec --no-startup-id nm-applet
+#exec --no-startup-id redshift-gtk
+
+# screen lock
+# bindsym mod1+Control+l exec i3lock -c 000d33
+bindsym mod1+Control+l exec "/home/prime/scripts/i3LockScreenPixely.sh"
+
+# switch to left and right workspace
+bindsym mod1+mod4+$left workspace prev
+bindsym mod1+mod4+$right workspace next
+
+bindsym mod1+mod4+Shift+$left move container to workspace prev; workspace prev
+bindsym mod1+mod4+Shift+$right move container to workspace next; workspace next
+
+#exec --no-startup-id xrdb ~/.Xresources
+#bindsym mod1+p exec "xrdb ~/.Xresources"
+
+#start up RAM monitor
+exec --no-startup-id watch -n 60 /home/prime/scripts/ramWarning.sh
+#start up battery monitor
+exec --no-startup-id watch -n 300 /home/prime/scripts/batteryWarning.sh
+
+bindsym Mod4+p exec "rm /tmp/gscreenshot*; gnome-screenshot -w -f $(mktemp -u /home/prime/gscreenshot.XXXX.png)"
+#bindsym Mod4+p exec "gnome-screenshot -a -f $(mktemp -u ~/gscreenshot.XXXX.png)"
+#bindsym Mod4+Shift+p exec "gnome-screenshot -a -f $(mktemp -u ~/gscreenshot.XXXX.png)"
+
+#launch dunst notification daemon
+exec --no-startup-id dunst -config /home/prime/.config/dunst/dunstrc
+
+#fancy black window
+exec /home/prime/scripts/launchBlackTerm 
+bindsym Shift+XF86Launch1 exec /home/prime/scripts/launchBlackTerm 
+for_window [instance="^blackterm$"] floating enable,move scratchpad,border pixel 9
+
+#block pop up for skype
+for_window [instance=".*skype.*"] floating disable
+
+#pop up feh windows
+for_window [instance="^feh"] floating enable
+
+#switch divided windows
+bindsym Mod4+Tab exec "/home/prime/scripts/i3TabCommand"
+
+#switch back to previous workspace
+#bindsym Mod4+grave workspace back_and_forth
+
+#mark window with "_last" id. Useful for my workspace command
+bindsym Mod4+grave exec "/home/prime/scripts/markWorkspace.py jump"
+bindsym Mod4+Shift+grave exec "/home/prime/scripts/markWorkspace.py mark"
+
+#copy and paste
+bindsym --release Mod4+Shift+v exec "/home/prime/scripts/longlivedClipboard.py -p"
+bindsym --release Mod4+Shift+c exec "/home/prime/scripts/longlivedClipboard.py -c"
+bindsym --release Mod4+space exec "xdotool key --clearmodifiers shift+Insert"
+
+#function hotkeys
+#bindsym F12 exec "/home/prime/scripts/functionButtons/fn12"
+
+#screen brightness [currently handeled at /etc/acpi
+#bindsym F5 exec "/home/prime/scripts/backlight.py down"
+#bindsym F6 exec "/home/prime/scripts/backlight.py up"
+#bindsym F11 exec "/home/prime/scripts/keyboardlight.py"
+
+#top row functions
+##gear button
+bindsym XF86Tools exec "/home/prime/scripts/launchumt.sh" 
+##computer button
+bindsym XF86Display exec "/home/prime/scripts/launchmsg.sh" 
+##mic mute
+bindsym XF86AudioMicMute exec "/home/prime/scripts/fancyXkill.sh" 
+
+# reset x state, incase it gets screwed up
+bindsym --release XF86Bluetooth exec "/home/prime/scripts/xStateToggle/toggle.py"
+
+
+#xdotool shortcuts
+bindsym --release F12 exec "xdotool type --clearmodifiers 30990526; notify-send 230497"
+# bindsym --release F10 exec "/home/prime/scripts/launchpdf.sh"
+
+# this is a hacky way to keep the computer from going to sleep. I'm not sure if this is even a good idea
+exec xautolock -time 9 -locker 'xdotool mousemove_relative 0 1' &
+
+exec /home/prime/scripts/mountManager/mountmanager &
+exec /home/prime/scripts/i3QuitShortcut &
+# exec --no-startup-id dockd --daemon
+
+# stop flashing escape
+# bindsym Escape exec "/home/prime/scripts/leds.sh off esc" 
+
+# default web browser
+exec xdg-settings default-web-browser vimb.desktop &
+
+# bind pushing red buttom to script
+bindsym Menu exec /home/prime/scripts/undock.py
+
+exec "/home/prime/toggleTrackpad.sh off"
